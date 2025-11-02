@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genting Papua - Gerakan Orang Tua Asuh Cegah Stunting</title>
+    <meta name="description" content="Bergabunglah dengan Gerakan Orang Tua Asuh Cegah Stunting (Genting) Papua untuk mewujudkan generasi emas Papua yang sehat, cerdas, dan bebas stunting.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 text-center mb-2;
+        }
+        .section-subtitle {
+            @apply text-center text-gray-500 mb-12;
+        }
+        .card {
+            @apply bg-white rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-2;
+        }
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-widget:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-sky-600">GENTING PAPUA</a>
+                <a href="index.html" class="hidden md:block bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">kembali</a>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-600 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="index.html" class="block mt-2 text-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">kembali</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="" class="py-20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-xl font-semibold text-gray-700 text-center mb-4">Dashboard Perkembangan Anak Asuh Provinsi Papua Selatan</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg mb-16">
+                   <iframe width="100%" height="1000" src="https://lookerstudio.google.com/embed/reporting/259fc1bc-a976-4de6-ad46-68f9fabcf7c5/page/p_qr3bcrzqxd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-xl italic mb-4">“Cegah stunting bukan hanya soal gizi, tapi soal kasih sayang dan kepedulian.”</p>
+            <p>&copy; 2025 Gerakan Orang Tua Asuh Cegah Stunting Papua. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-[1001] p-4">
+        <div class="relative bg-white p-2 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh]">
+            <img id="modal-img" src="" alt="Galeri Kegiatan Lapangan" class="object-contain w-full h-full max-h-[85vh]">
+            <button id="close-modal" class="absolute -top-4 -right-4 text-white bg-gray-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-red-600 transition-colors text-2xl font-bold">&times;</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Widget -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="whatsapp-widget" aria-label="Hubungi kami di WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.457l-6.354 1.687zM8.349 6.208c.189-.444.378-.444.542-.458.163-.014 3.425.001 3.425.001.164 0 .341.018.502.438.163.419-.948 2.053-.948 2.053s-.163.181-.019.344c.143.163.963.953.963.953s.341.328.502.506c.163.181.181.164.344.344.163.181.42.502.42.502s.66.726.823.904c.163.181.182.279.123.42s-.279.344-.542.42c-.263.076-.582.076-.823.057-.242-.018-1.564-.614-2.973-1.845-1.409-1.231-2.317-2.73-2.317-2.73s-.164-.181-.344-.019c-.181.163-.925.904-.925.904s-.181.163-.344.019c-.163-.143-.344-.328-.344-.328s-.181-.181-.19-.344c-.01-.163.001-.328.001-.328z"/></svg>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // NOTE: The previous donation form logic is removed as the form has been replaced.
+        // If you need logic for the new form, it can be added here.
+    </script>
+</body>
+</html>
+

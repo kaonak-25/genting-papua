@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genting Papua - Gerakan Orang Tua Asuh Cegah Stunting</title>
+    <meta name="description" content="Bergabunglah dengan Gerakan Orang Tua Asuh Cegah Stunting (Genting) Papua untuk mewujudkan generasi emas Papua yang sehat, cerdas, dan bebas stunting.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 text-center mb-2;
+        }
+        .section-subtitle {
+            @apply text-center text-gray-500 mb-12;
+        }
+        .card {
+            @apply bg-white rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-2;
+        }
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-widget:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-sky-600">GENTING PAPUA</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#beranda" class="text-gray-600 hover:text-sky-500 transition-colors">Beranda</a>
+                    <a href="#tentang" class="text-gray-600 hover:text-sky-500 transition-colors">Tentang Genting</a>
+                    <a href="#dashboard" class="text-gray-600 hover:text-sky-500 transition-colors">Dashboard</a>
+                    <a href="#galeri" class="text-gray-600 hover:text-sky-500 transition-colors">Galeri</a>
+                    <a href="#kontak" class="text-gray-600 hover:text-sky-500 transition-colors">Kontak</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-600 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#beranda" class="block py-2 px-4 text-sm text-gray-600 hover:bg-sky-50 rounded">Beranda</a>
+                <a href="#tentang" class="block py-2 px-4 text-sm text-gray-600 hover:bg-sky-50 rounded">Tentang Genting</a>
+                <a href="#dashboard" class="block py-2 px-4 text-sm text-gray-600 hover:bg-sky-50 rounded">Dashboard</a>
+                <a href="#galeri" class="block py-2 px-4 text-sm text-gray-600 hover:bg-sky-50 rounded">Galeri</a>
+                <a href="#kontak" class="block py-2 px-4 text-sm text-gray-600 hover:bg-sky-50 rounded">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Halaman 1: Beranda -->
+        <section id="beranda" class="bg-sky-50 pt-20 pb-10 md:pt-32 md:pb-20">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <!-- Text Content -->
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                            Gerakan Orang Tua Asuh <span class="text-sky-600">Cegah Stunting</span> Papua
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8">
+                            Bersama Wujudkan Generasi Emas Papua yang Sehat, Cerdas, Kuat dan Tidak Stunting.
+                        </p>
+                        <a href="#bergabung" class="bg-green-500 text-white font-bold py-3 px-8 rounded-full hover:bg-green-600 transition-transform transform hover:scale-105 text-lg inline-block">
+                            Gabung Jadi Orang Tua Asuh
+                        </a>
+                    </div>
+                    <!-- Image Content -->
+                    <div class="md:w-1/2 mt-8 md:mt-0">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczN_RgW8uIzpSzk_3FE0Z9UcdgfzQtDpoBeMK7y4JFZ6GgKOGPTHGblIwOxI2GLU04ytFA4QWLiyJzPgKWJvCOgBZbrrrL8ELWI2cI1ac1hPjvrIQuDjMXjNXEsCGQJsxKcRF01jaCM4v-8Q25S-WHE=w400-h400-s-no-gm?authuser=0" 
+                        alt="Anak Papua Tersenyum" class="rounded-2xl shadow-2xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Halaman 2: Tentang Genting -->
+        <section id="tentang" class="py-20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-2xl font-semibold text-gray-700 text-center mb-10">Mengenal Genting</h3>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <div class="aspect-video w-full rounded-lg shadow-xl overflow-hidden">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/zafelj3wp3k?si=0c4OSIWwtVOa7tKC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Latar Belakang & Tujuan</h3>
+                        <p class="text-gray-600 mb-4">Stunting masih menjadi tantangan serius bagi masa depan anak-anak Papua. GENTING (Gerakan Orang Tua Asuh Cegah Stunting) lahir dari semangat gotong royong untuk memastikan setiap anak Papua, terutama yang berasal dari keluarga beresiko stunting,
+                                                     mendapatkan awal kehidupan terbaik. Kami menghubungkan kepedulian Anda langsung kepada anak-anak yang membutuhkan.</p>
+                        <p class="text-gray-600">Tujuan kami adalah menurunkan angka prevalensi stunting melalui intervensi gizi yang tepat sasaran, edukasi keluarga, serta perbaikan sanitasi dan lingkungan, demi terwujudnya Generasi Emas Papua yang sehat, cerdas, kuat dan tidak stunting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+          <!-- FAQ Section -->
+        <section id="faq" class="py-20">
+            <div class="container mx-auto px-6 bg-sky-50">
+                <h3 class="text-2xl font-semibold text-gray-700 text-center bg-sky-50 py-10">FAQ</h3>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto pb-20">
+                    <!-- FAQ Item 1 -->
+                    <div class="card text-center">
+                        <div class="bg-sky-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-2 border-sky-200">
+                             <svg class="w-10 h-10 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9.5a5.5 5.5 0 10-11 0 5.5 5.5 0 0011 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21v-2a4 4 0 00-3-3.87"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-2a4 4 0 013-3.87"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-sky-600 mb-2">Siapa itu Orang Tua Asuh (OTA)?</h3>
+                        <p class="text-gray-600 text-left">Orang Tua Asuh (OTA) adalah pihak yang berperan sebagai pemberi bantuan yang terdiri dari unsur BUMN, BUMD, Swasta, Individu/Perorangan, LSM/Komunitas, Perguruan Tinggi/Akademisi, Media, dan Lainnya.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="bg-sky-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-2 border-sky-200">
+                             <svg class="w-10 h-10 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9.5a5.5 5.5 0 10-11 0 5.5 5.5 0 0011 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21v-2a4 4 0 00-3-3.87"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-2a4 4 0 013-3.87"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-sky-600 mb-2">Siapa itu Penerima GENTING/ Anak Asuh (AA)?</h3>
+                        <p class="text-gray-600 text-left">Penerima Genting yaitu keluarga yang memiliki ibu hamil dan ibu menyusui atau anak usia 0-23 bulan dengan tingkat kesejahteraan rendah dan atau beresiko stunting.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="bg-sky-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-2 border-sky-200">
+                             <svg class="w-10 h-10 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9.5a5.5 5.5 0 10-11 0 5.5 5.5 0 0011 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21v-2a4 4 0 00-3-3.87"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-2a4 4 0 013-3.87"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-sky-600 mb-2">Apa itu Keluarga Beresiko Stunting (KRS)?</h3>
+                        <p class="text-gray-600 text-left">Keluarga beresiko stunting adalah keluarga sasaran yang memiliki faktor resiko untuk melahirkan anak stunting yang terdiri dari PUS, ibu hamil,
+                            dan keluarga dengan anak 0-23 bulan, serta penapisan faktor resiko yang mudah diamati dan mempengaruhi terjadinya stinting seperti, sanitasi, akses air bersih serta Kondisi 4T
+                            (Terlalu muda, terlalu tua, terlalu dekat, terlalu banyak).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Halaman 3: Bantuan -->
+        <section id="bantuan" class="py-10">
+            <div class="container mx-auto px-6">
+                <h3 class="text-2xl font-semibold text-gray-700 text-center">Jenis Bantuan</h3>
+                <div class="grid md:grid-cols-3 gap-8 py-10">
+                    <div class="card text-center">
+                        <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <!-- Icon for Nutrition -->
+                            <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-5.22-6.764h10.44M6.78 12.744l-1.44-1.44M18.66 11.304l-1.44 1.44m-1.44-5.656l1.44-1.44M5.34 8.196l1.44 1.44M12 21.75c-5.385 0-9.75-4.365-9.75-9.75S6.615 2.25 12 2.25s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Bantuan Nutrisi</h3>
+                        <p class="text-gray-600">Penyaluran bantuan bahan makanan bergizi tinggi seperti telur, ikan, sayuran dan susu, serta makanan siap saji yang sesuai untuk ibu hamil, ibu menyusui dan anak 0-23 bulan.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="bg-sky-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <!-- Icon for Non-Nutrition -->
+                            <svg class="w-10 h-10 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h6.375M9 12h6.375M9 17.25h6.375M12 3c-1.657 0-3 1.343-3 3v.75M12 3c1.657 0 3 1.343 3 3v.75m-6 8.25c0 1.657 1.343 3 3 3s3-1.343 3-3V12m-6 0v-1.5c0-1.657 1.343-3 3-3s3 1.343 3 3V12"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Bantuan Non-Nutrisi</h3>
+                        <p class="text-gray-600">Menciptakan lingkungan yang sehat melalui program pembangunan rumah sehat, penyediaan akses air bersih, dan perbaikan fasilitas sanitasi untuk keluarga.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <!-- Icon for Education -->
+                           <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Edukasi & KIE</h3>
+                        <p class="text-gray-600">Memberikan penyuluhan dan pendampingan bagi ibu hamil, ibu menyusui, dan kader posyandu mengenai pola asuh dan gizi seimbang untuk 1000 Hari Pertama Kehidupan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+          <!-- Halaman Baru: Dashboard -->
+        <section id="dashboard" class=" py-20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-2xl font-semibold text-gray-700 text-center mb-10 ">Dashboard</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Box 1: Papua -->
+                    <a href="provinsi papua.html" target="_blank" rel="noopener noreferrer" class="block rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczOCB8wINXvCCY9T1khA5NTnZYfoWp4ASBV_T7Nw4uXE40U5KJLdUam08k8UuvXwvkL0FUTwtvXVHrLcfCFAWWnjOptL0crJc9WUscqA0mYqpp7f_pLrHqLLc_hDgIQrJoXsOThFFpSkSPmtQIv9p3QC=w200-h200-s-no-gm?authuser=0" alt="Peta Wilayah Papua" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Provinsi Papua</h3>
+                            <p class="text-gray-600 text-sm mb-4">laporan Perkembangan Anak Asuh di Provinsi Papua.</p>
+                            <span class="font-semibold text-sky-600 hover:text-sky-700">Lihat Detail &rarr;</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Box 2: Papua Pegunungan -->
+                    <a href="provinsi papeg.html" target="_blank" rel="noopener noreferrer" class="block rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMI6YsZTDPPtmoslGDzvNWUtSI7fGf2X6RMjMFXkIrpwa46e6MTxXkn0FNhkZIGSuJHN8cB4OULsWmCbV7W04U4HKuh2eow9pFhbqF1bhGdkUW501WVICHLfetrCh1jksnNpWgvUA0PwbpvTPmQeaBO=w200-h200-s-no-gm?authuser=0" alt="Peta Wilayah Papua Pegunungan" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Provinsi Papua Pegunungan</h3>
+                            <p class="text-gray-600 text-sm mb-4">laporan Perkembangan Anak Asuh di Provinsi Papua Pegunungan.</p>
+                            <span class="font-semibold text-sky-600 hover:text-sky-700">Lihat Detail &rarr;</span>
+                        </div>
+                    </a>
+
+                    <!-- Box 3: Papua Tengah -->
+                    <a href="provinsi papteng.html" target="_blank" rel="noopener noreferrer" class="block rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczPmaXEfVXLFTza3Q1s0L9Z2ZhIi4eMmLiF2f-cN2QzBG_ahSSQsTKd2hM7lpaifRYg7i4uY5Q7BYXZQWSwRYlBZSr7iegXrYU7WgqLG5s18r89auyG_Mj9j_PDezRAzcySCEtQfaPdRLPmSg7IKieEs=w200-h200-s-no-gm?authuser=0" alt="Peta Wilayah Papua Tengah" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Provinsi Papua Tengah</h3>
+                            <p class="text-gray-600 text-sm mb-4">laporan Perkembangan Anak Asuh di Provinsi Papua Tengah</p>
+                            <span class="font-semibold text-sky-600 hover:text-sky-700">Lihat Detail &rarr;</span>
+                        </div>
+                    </a>
+
+                    <!-- Box 4: Papua Selatan -->
+                    <a href="provinsi papsel.html" target="_blank" rel="noopener noreferrer" class="block rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczPgIJAX8Ocya1SdnvbwLIXuO1_EJXymwbiJcgr_76VAOkz9T0DUiQ6kBHIZCny73vecnfdwwupKx5TB8I3ZGGVRFLWXVYL9suvVMqHrLSYYc9ec7yYk73NsN22ksnmrLrfiYkNRQeudmSzFyVEeh4ts=w200-h200-s-no-gm?authuser=0" alt="Peta Wilayah Papua Selatan" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Provinsi Papua Selatan</h3>
+                            <p class="text-gray-600 text-sm mb-4">laporan Perkembangan Anak Asuh di Provinsi Papua Selatan.</p>
+                            <span class="font-semibold text-sky-600 hover:text-sky-700">Lihat Detail &rarr;</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Halaman 5: Bergabung / Donasi -->
+        <section id="bergabung" class="py-20 bg-green-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="section-title font-bold">Ayo Berkontribusi!</h2>
+                    <p class="section-subtitle mb-8">Daftarkan diri Anda atau instansi Anda sebagai Mitra Gerakan Orang Tua Asuh Cegah Stunting.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+                    <div id="ff-compose"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Halaman 6: Galeri & Berita -->
+        <section id="galeri" class="pt-20 pb-20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-2xl font-semibold text-gray-700 text-center mb-8">Kegiatan Lapangan</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMNHt-UiqzTtk1PweAw3PgwrN8D-R7DE_I404_tW4GIpLS1s_RKkdPM8Wxb-YeovmTVC-zHv8Pkil4sLUCm7G3nB1tsrG18MILeBn6muLIcLtyhO4RTGK7RXfZzXLpF61CkRjKY_NGYPJwNsr0MDxg=w500-h400-s-no-gm?authuser=0" alt="Kegiatan 1" class="gallery-item rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMwEmdUmcI0L8JYrjXxtI_ANI_c6pk8NPboemzg_UojDJ8PrIWN9WCv-ux-v0n7wwSUie1u49yf8w-aPzOwGgrMWNLCFotkiPH6XYbsJ0tisMV-MuDq28e5_38IcAfk6KnbM7RCn8sjCHiWL95Lf6o=w500-h400-s-no-gm?authuser=0" alt="Kegiatan 2" class="gallery-item rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNOeyaCN64w5uGVpnGuInlSmSr_hAo1EmjM5SyO8BCQghyXRjNv_bMwCGZaRBQk9bwIXeEt0ECkTToCis_pU2oWB0c1XbqdBtoWS2N0nn3xfH2OKPye9_ihWdZGu5Y8LRe0fmYA8HRNZ7w_J3FNJdM=w500-h400-s-no-gm?authuser=0" alt="Kegiatan 3" class="gallery-item rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczOVXsqJuVpN7hvz01V-jFOqRLV_V9Mlfx1Ilrv3TErA-09Cao0JIa0lIGfgYYHD0Y38soM5IOGHfp_K6fT_ZtM510WaP2IyGwgwgKv4iL7DLUrV9Zk3pTTJjK3WDyFVsM8vWfCxtmAjQjpxJCDkqZ8=w500-h400-s-no-gm?authuser=0" alt="Kegiatan 4" class="gallery-item rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczP1QHNwFS3VhFxxxOhkCZ97a34BVU-LUlX8jo4E753Vprtv8W4XpStYj_kVIQ6hUDhazrHejj-Hma7fGrR-PMzKXvXArYxrgo_xkPLe8hrg3RMx6BykkiBAXkr-dqqMd16fxyLWSYiWt6ntbTOdGLY=w500-h400-s-no-gm?authuser=0" alt="Kegiatan 1" class="gallery-item rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczM6rZVRbMzylV1kEAEebKkuQggLt9PBCle1bsLkKy6VPG2L9Wrj6M90S7KJGgzp__1NY1yKBAAY5chO2moEwVk_1jHEdn8r-hweUbl5I5JAsXuxIb3chF_cKHrMr-63RFFAh2k3_YN9MPq65mJAp5Y=w500-h400-s-no-gm?authuser=0" alt="Kegiatan 2" class="gallery-item rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMfIdLy4lYwD1A3bb7yu6xk9hPfcs8bDN35lFxpD3pr-RTh9dCzQtS0x9Qgfd_gwXpSUVHZBN-k0zPcwLXtIVPv41D1emoKbxKicXBkvqlHxhD1z0RkTml7o6KxQlhoRFCBJXyXslD4_TC2QGOom9s=w500-h400-s-no-gm?authuser=0" alt="Kegiatan 3" class="gallery-item rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczPusENbS6Qea4W-OtYKvl_xhZoGrVYx4sl97ZHDJaLq5C9MXhPNX6cSCZERHmUSiQ88P7K-pFVVfHdmLwhwVpqup1Sz3dkkhRt2OzC-FzU9WRiyHTQuYeZh6aXD_uTawUqtN4kY_EOGt5dfbvHNMow=w500-h400-s-no-gm?authuser=0" alt="Kegiatan 4" class="gallery-item rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer">
+                </div>
+            </div>
+        </section>
+
+                <!-- Halaman Cerita Lapangan -->
+        <section id="cerita" class="pt-10 pb-20 bg-green-50">
+            <div class="container mx-auto px-6">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-700 text-center mb-8">Cerita Sukses dari Lapangan</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center gap-6">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczNFOXGnIxG2hnlJCH0l285CgDGnvk5yLfHP6GrUt-i5CPLco4ge2N1F17saM5m7pkoe6efRdVnthY1Kn3tIJGFRGcZDSJ_EqajS2IHCqP64bfD4YsrQdzeYTdcJGFdsLDmCIlZh8GFQrMMWGaJ_4oLG=w50-h50-s-no-gm?authuser=0" alt="Testimoni" class="w-24 h-24 rounded-full object-cover">
+                            <div>
+                                <p class="text-gray-600 italic">"Melihat progress BB dan TB mereka (AA) membuat saya yakin bahwa bantuan yang saya berikan tepat sasaran. Semoga semakin banyak yang bergabung dalam GENTING ini untuk membantu anak-anak Papua"</p>
+                                <p class="mt-4 font-bold text-gray-800">- Yudith Marey</p>
+                                <p class="text-sm text-gray-500">Orang Tua Asuh, Kab. Nabire</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center gap-6">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczNAb4uU_uJv-h_V6fTiPq9AUTQNYM-51ohZVkp6OlOyTsA4WH6uK1QVj9z26_jh0Y6kzYgH40RB5u8xy83DJMh8f11Fp9cifCVa48rZSTcsxIUo6tijeLeZ9RQHVoEv7iIYZCkcMVif3ptjBEbcozSX=w50-h50-s-no-gm?authuser=0" alt="Testimoni" class="w-24 h-24 rounded-full object-cover">
+                            <div>
+                                <p class="text-gray-600 italic">"Menjadi relawan dan melihat langsung senyum anak-anak ini adalah kebahagiaan yang tak ternilai. Kontribusi kecil kita benar-benar membawa perubahan besar bagi mereka."</p>
+                                <p class="mt-4 font-bold text-gray-800">- Bapak Budi</p>
+                                <p class="text-sm text-gray-500">Relawan & Orang Tua Asuh, Jakarta</p>
+                            </div>
+                        </div>
+                         <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center gap-6">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczNAb4uU_uJv-h_V6fTiPq9AUTQNYM-51ohZVkp6OlOyTsA4WH6uK1QVj9z26_jh0Y6kzYgH40RB5u8xy83DJMh8f11Fp9cifCVa48rZSTcsxIUo6tijeLeZ9RQHVoEv7iIYZCkcMVif3ptjBEbcozSX=w50-h50-s-no-gm?authuser=0" alt="Testimoni" class="w-24 h-24 rounded-full object-cover">
+                            <div>
+                                <p class="text-gray-600 italic">"Terima kasih Orang Tua Asuh. Sekarang anak saya, Yosua, lebih aktif dan berat badannya terus naik. Dulu kami bingung, tapi sekarang kami tahu harus memberi makanan apa."</p>
+                                <p class="mt-4 font-bold text-gray-800">- Mama Maria</p>
+                                <p class="text-sm text-gray-500">Penerima Manfaat, Kab. Jayawijaya</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center gap-6">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczNAb4uU_uJv-h_V6fTiPq9AUTQNYM-51ohZVkp6OlOyTsA4WH6uK1QVj9z26_jh0Y6kzYgH40RB5u8xy83DJMh8f11Fp9cifCVa48rZSTcsxIUo6tijeLeZ9RQHVoEv7iIYZCkcMVif3ptjBEbcozSX=w50-h50-s-no-gm?authuser=0" alt="Testimoni" class="w-24 h-24 rounded-full object-cover">
+                            <div>
+                                <p class="text-gray-600 italic">"Menjadi relawan dan melihat langsung senyum anak-anak ini adalah kebahagiaan yang tak ternilai. Kontribusi kecil kita benar-benar membawa perubahan besar bagi mereka."</p>
+                                <p class="mt-4 font-bold text-gray-800">- Bapak Budi</p>
+                                <p class="text-sm text-gray-500">Relawan & Orang Tua Asuh, Jakarta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Tentang Mitra -->
+        <section id="mitra" class="py-20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-2xl font-semibold text-gray-700 text-center mb-8">Dukungan Mitra Pentahelix</h3>
+                <div class="flex flex-col md:flex-row items-center gap-12"></div>
+                <div class="mt-18">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+                        <div class="p-4 bg-white rounded-lg shadow-md"><p class="font-semibold">Pemerintah</p><span class="text-sm text-gray-500">(BUMN/BUMD)</span></div>
+                        <div class="p-4 bg-white rounded-lg shadow-md"><p class="font-semibold">Masyarakat</p><span class="text-sm text-gray-500">(Komunitas)</span></div>
+                        <div class="p-4 bg-white rounded-lg shadow-md"><p class="font-semibold">Swasta</p><span class="text-sm text-gray-500">(Perusahaan)</span></div>
+                        <div class="p-4 bg-white rounded-lg shadow-md"><p class="font-semibold">Akademisi</p><span class="text-sm text-gray-500">(Universitas)</span></div>
+                        <div class="p-4 bg-white rounded-lg shadow-md"><p class="font-semibold">Media</p><span class="text-sm text-gray-500">(Pers)</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Halaman 7: Kontak Kami -->
+        <section id="kontak" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row gap-12 bg-white p-8 rounded-lg shadow-xl">
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Informasi Kontak</h3>
+                        <p class="text-gray-600 mb-2"><strong class="font-medium">Alamat:</strong> Jl. Raya Abepura No. 123, Kota Jayapura, Papua</p>
+                        <p class="text-gray-600 mb-2"><strong class="font-medium">Admin:</strong> Tim Genting BKKBN Papua</p>
+                        <p class="text-gray-600 mb-2"><strong class="font-medium">Email:</strong> <a href="mailto:info@gentingpapua.id" class="text-sky-600">info@gentingpapua.id</a></p>
+                        <p class="text-gray-600 mb-4"><strong class="font-medium">WhatsApp:</strong> <a href="#" target="_blank" class="text-sky-600"></a></p>
+                        <div class="flex space-x-4 mb-6">
+                           <a href="#" class="text-gray-500 hover:text-sky-600">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                           </a>
+                           <a href="#" class="text-gray-500 hover:text-sky-600">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.792 2.013 10.146 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm5.25-10a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clip-rule="evenodd" /></svg>
+                           </a>
+                        </div>
+                        <div class="w-full h-64 bg-gray-200 rounded-lg">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.6878873447235!2d140.6687313!3d-2.607332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686cf58552ad2b0f%3A0xa452ffc3f7b93378!2sKemendukbangga%2FBKKBN%20Provinsi%20Papua!5e0!3m2!1sid!2sid!4v1761317320214!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" alt="Peta Lokasi" class="w-full h-full object-cover rounded-lg"></iframe>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Form Kontak Cepat</h3>
+                        <form>
+                             <div class="mb-4">
+                                <label for="contact-nama" class="block text-gray-700 font-medium mb-2">Nama</label>
+                                <input type="text" id="contact-nama" name="nama" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="contact-email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required>
+                            </div>
+                             <div class="mb-4">
+                                <label for="pesan" class="block text-gray-700 font-medium mb-2">Pesan</label>
+                                <textarea id="pesan" name="pesan" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-xl italic mb-4">“Cegah stunting bukan hanya soal gizi, tapi soal kasih sayang dan kepedulian.”</p>
+            <p>&copy; 2025 Gerakan Orang Tua Asuh Cegah Stunting Papua. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-[1001] p-4">
+        <div class="relative bg-white p-2 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh]">
+            <img id="modal-img" src="" alt="Galeri Kegiatan Lapangan" class="object-contain w-full h-full max-h-[85vh]">
+            <button id="close-modal" class="absolute -top-4 -right-4 text-white bg-gray-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-red-600 transition-colors text-2xl font-bold">&times;</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Widget -->
+    <a href="https://wa.me/6282293756104" target="_blank" class="whatsapp-widget" aria-label="Hubungi kami di WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.457l-6.354 1.687zM8.349 6.208c.189-.444.378-.444.542-.458.163-.014 3.425.001 3.425.001.164 0 .341.018.502.438.163.419-.948 2.053-.948 2.053s-.163.181-.019.344c.143.163.963.953.963.953s.341.328.502.506c.163.181.181.164.344.344.163.181.42.502.42.502s.66.726.823.904c.163.181.182.279.123.42s-.279.344-.542.42c-.263.076-.582.076-.823.057-.242-.018-1.564-.614-2.973-1.845-1.409-1.231-2.317-2.73-2.317-2.73s-.164-.181-.344-.019c-.181.163-.925.904-.925.904s-.181.163-.344.019c-.163-.143-.344-.328-.344-.328s-.181-.181-.19-.344c-.01-.163.001-.328.001-.328z"/></svg>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+
+        // Image Modal Popup Logic
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeModalBtn = document.getElementById('close-modal');
+        const galleryImages = document.querySelectorAll('.gallery-item');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                modalImg.src = img.src;
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            modalImg.src = ""; // Clear src to avoid showing old image briefly
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Close modal when clicking on the background overlay
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // NOTE: The previous donation form logic is removed as the form has been replaced.
+        // If you need logic for the new form, it can be added here.
+    </script>
+    <script async defer src="https://formfacade.com/include/101306005160758374911/form/1FAIpQLSfHm60Z6c1sR_QYJOZlooeIFCW8It_PAGLXVhG3cDOPYBYTwg/classic.js?div=ff-compose"></script>
+</body>
+</html>
+
